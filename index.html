@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet For Meat - Product Documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="/images/logo.png" alt="Meet For Meat Logo">
+            </div>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#system-overview">System</a></li>
+                    <li><a href="#erd">Database</a></li>
+                    <li><a href="#installation">Install</a></li>
+                    <li><a href="#configuration">Config</a></li>
+                    <li><a href="#api">API</a></li>
+                    <li><a href="#backend">Backend</a></li>
+                    <li><a href="#hardware">Hardware</a></li>
+                    <li><a href="#testing">Testing</a></li>
+                   
+                    <li><a href="#glossary">Glossary</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#team">Team</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Modernizing the Ethiopian Kircha Tradition</h2>
+            <p>A digital platform that enables community members to easily create or join Kircha groups with transparency, cultural respect, affordability, and flexible service options, while supporting local farmers and maintaining social cohesion.</p>
+            <div class="hero-buttons">
+                <a href="#overview" class="btn">Explore Documentation</a>
+            </div>
+        </div>
+    </section>
+    <section id="overview" class="container">
+        <div class="section-title">
+            <h2>Product Overview</h2>
+            <p>Meet For Meat is a Progressive Web App designed to modernize the Ethiopian Kircha tradition.</p>
+        </div>
+        <div class="tabs">
+            <div class="tab active" data-tab="problem">Problem Statement</div>
+            <div class="tab" data-tab="solution">Proposed Solution</div>
+            <div class="tab" data-tab="stakeholders">Stakeholders</div>
+            <div class="tab" data-tab="metrics">Success Metrics</div>
+        </div>
+        <div id="problem" class="tab-content active">
+            <h3>The Challenge</h3>
+            <p>Despite its cultural, social, and economic importance, the traditional practice of Kircha in Ethiopia is under threat. Rising cattle prices have made it increasingly unaffordable for many groups to collectively purchase animals, limiting access to meat for low- and middle-income households. Urbanization and frequent relocation of community members have fragmented the close-knit social networks essential for organizing Kircha, weakening community cohesion.</p>
+            <br>
+            <h3>How might we engage younger generations in the Kircha tradition, making it relevant and convenient for modern lifestyles, while also supporting Kircha groups in overcoming social fragmentation and ensuring communal meat sharing remains affordable despite rising cattle prices?</h3>
+        </div>
+        <div id="solution" class="tab-content">
+            <h3>Our Solution</h3>
+            <p>To modernize and digitize the Ethiopian Kircha tradition by enabling community members to easily create or join Kircha groups with transparency, cultural respect, affordability, and flexible service options, while supporting local farmers and maintaining social cohesion.</p>
+            <br>
+            <p>The Kircha PWA features two distinct user flows:</p>
+            <ul>
+                <li><strong>Create Kircha Group:</strong> Organizers select verified farmer-listed oxen or bulls, set culturally sensitive slaughter dates and times, and choose slaughtering method (self or company-managed).</li>
+                <li><strong>Join Kircha Group:</strong> Users join company-stocked Kircha groups with slaughter dates and times displayed prominently to respect fasting practices.</li>
+            </ul>
+        </div>
+        <div id="stakeholders" class="tab-content">
+            <h3>Key Stakeholders</h3>
+            <ul>
+                <li><strong>Kircha Organizers:</strong> Users who create Kircha groups, select farmers' livestock, set slaughter schedules, and manage member onboarding.</li>
+                <li><strong>Kircha Members:</strong> Participants who join existing groups, provide delivery details, and make payments.</li>
+                <li><strong>Livestock Farmers:</strong> Verified farmers who list oxen/bulls, manage availability, and coordinate livestock delivery.</li>
+                <li><strong>Kircha Company:</strong> Provides livestock for joiners, manages slaughtering and delivery, and handles payment processing.</li>
+                <li><strong>Community Members:</strong> Christian users observing cultural and fasting practices related to Kircha.</li>
+                <li><strong>Developers & Admins:</strong> Manage platform infrastructure, security, and user support.</li>
+            </ul>
+        </div>
+        <div id="metrics" class="tab-content">
+            <h3>Success Metrics</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Target</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>User Registration</td><td>2000 members within 6 months</td></tr>
+                        <tr><td>Group Payment Completion</td><td>85% of groups full payment coverage</td></tr>
+                        <tr><td>Livestock listing</td><td>100 verified livestock listed in 3 months</td></tr>
+                        <tr><td>Active Usage</td><td>70% members join ≥1 group within 6 months</td></tr>
+                        <tr><td>Fasting Compliance</td><td>95% of slaughter schedule respect Fasting periods</td></tr>
+                        <tr><td>System Reliability</td><td>99% uptime, &lt;1% critical error rate</td></tr>
+                        <tr><td>User Satisfaction</td><td>85% positive feedback on usability and cultural respect</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section id="features" class="container">
+        <div class="section-title">
+            <h2>Main Features</h2>
+            <p>Key features of the Meet For Meat PWA for different user types.</p>
+        </div>
+        <div class="tabs">
+            <div class="tab active" data-tab="organizer-features">For Organizers</div>
+            <div class="tab" data-tab="member-features">For Members</div>
+            <div class="tab" data-tab="farmer-features">For Farmers</div>
+            <div class="tab" data-tab="company-features">For Company</div>
+        </div>
+
+        <div id="organizer-features" class="tab-content active">
+            <div class="cards">
+                <div class="card"><div class="card-header"><h3>Browse Livestock</h3></div><div class="card-body"><p>Browse and select verified livestock listings with photos, weight, health details, and price.</p></div></div>
+                <div class="card"><div class="card-header"><h3>Real-time Availability</h3></div><div class="card-body"><p>Receive real-time livestock availability updates with alternative recommendations if unavailable.</p></div></div>
+                <div class="card"><div class="card-header"><h3>Group Type Selection</h3></div><div class="card-body"><p>Select group type (Half Kircha: max 20 members; Full Kircha: max 10 members).</p></div></div>
+                <div class="card"><div class="card-header"><h3>Slaughter Scheduling</h3></div><div class="card-body"><p>Set slaughter date and time using calendar UI including fasting-day alerts.</p></div></div>
+                <div class="card"><div class="card-header"><h3>Slaughtering Method</h3></div><div class="card-body"><p>Choose slaughtering method: self-slaughter (pay delivery fee) or company-managed slaughter and delivery.</p></div></div>
+                <div class="card"><div class="card-header"><h3>Payment Tracking</h3></div><div class="card-body"><p>Track payment collection progress visually and use in-app messaging to communicate with group members.</p></div></div>
+            </div>
+        </div>
+
+        <div id="member-features" class="tab-content">
+            <div class="cards">
+                <div class="card"><div class="card-header"><h3>Browse Groups</h3></div><div class="card-body"><p>View and join up to 5 ongoing company-stocked Kircha groups with slaughter schedules visible.</p></div></div>
+                <div class="card"><div class="card-header"><h3>Group Details</h3></div><div class="card-body"><p>See group details: livestock info, member count, price per person, slaughter date/time.</p></div></div>
+                <div class="card"><div class="card-header"><h3>Easy Registration</h3></div><div class="card-body"><p>Provide full name, phone number (validated), and delivery address with autocomplete/map pin capability.</p></div></div>
+                <div class="card"><div class="card-header"><h3>Secure Payments</h3></div><div class="card-body"><p>Complete payments via secure mobile money or card payment gateways.</p></div></div>
+                <div class="card"><div class="card-header"><h3>Confirmations</h3></div><div class="card-body"><p>Receive payment confirmation and timely reminders for slaughter and delivery schedule.</p></div></div>
+            </div>
+        </div>
+
+        <div id="farmer-features" class="tab-content">
+            <div class="cards">
+                <div class="card"><div class="card-header"><h3>Livestock Management</h3></div><div class="card-body"><p>Register and maintain oxen/bull listings with detailed descriptions and images.</p></div></div>
+                <div class="card"><div class="card-header"><h3>Availability Updates</h3></div><div class="card-body"><p>Update real-time availability status to prevent overbooking.</p></div></div>
+                <div class="card"><div class="card-header"><h3>Secure Transactions</h3></div><div class="card-body"><p>Commit animals only after full payment confirmation.</p></div></div>
+                <div class="card"><div class="card-header"><h3>Delivery Coordination</h3></div><div class="card-body"><p>Coordinate livestock delivery to company or group organizer.</p></div></div>
+            </div>
+        </div>
+
+        <div id="company-features" class="tab-content">
+            <div class="cards">
+                <div class="card"><div class="card-header"><h3>Inventory Management</h3></div><div class="card-body"><p>Maintain company-owned livestock inventory for joiners.</p></div></div>
+                <div class="card"><div class="card-header"><h3>Livestock Transfer</h3></div><div class="card-body"><p>Manage livestock transfer and collection post full payment for creators' groups.</p></div></div>
+                <div class="card"><div class="card-header"><h3>Logistics Coordination</h3></div><div class="card-body"><p>Coordinate slaughtering and delivery logistics for company-managed services.</p></div></div>
+                <div class="card"><div class="card-header"><h3>Payment Processing</h3></div><div class="card-body"><p>Ensure secure payment processing and data protection compliance.</p></div></div>
+            </div>
+        </div>
+    </section>
+    <section id="user-flows" class="container">
+        <div class="section-title">
+            <h2>User Flows</h2>
+            <p>Step-by-step processes for creating and joining Kircha groups.</p>
+        </div>
+        <div class="tabs">
+            <div class="tab active" data-tab="creating-group">Creating a Kircha Group</div>
+            <div class="tab" data-tab="joining-group">Joining a Kircha Group</div>
+            <div class="tab" data-tab="company-groups">Joining Company Groups</div>
+        </div>
+
+        <div id="creating-group" class="tab-content active">
+            <div class="user-flow">
+                <div class="flow-step"><div class="step-number">1</div><div class="step-content"><h3>Farmer Livestock Selection</h3><p>User (organizer) browses verified farmer-listed oxen/bulls displayed with high-quality images, weight in kilograms, breed and health information summary, and price per kilogram and total price displayed. The app performs a real-time availability check to confirm if the livestock is still available.</p></div></div>
+                <div class="flow-step"><div class="step-number">2</div><div class="step-content"><h3>Group Type Selection</h3><p>Organizer selects Half Kircha (up to 20 members) or Full Kircha (up to 10 members). The app displays the maximum number of members allowed and calculates individual cost based on group type and total livestock price.</p></div></div>
+                <div class="flow-step"><div class="step-number">3</div><div class="step-content"><h3>Slaughter Date & Time Setting</h3><p>Organizer chooses the slaughter date and exact time using a clear calendar UI. The system warns if the date coincides with known Christian fasting days, ensuring cultural sensitivity.</p></div></div>
+                <div class="flow-step"><div class="step-number">4</div><div class="step-content"><h3>Slaughtering Method Selection</h3><p>The organizer selects from Self-Slaughter (organizer plans to slaughter the oxen personally) or Company-Managed Slaughter (the company handles slaughtering and delivery). Prices for delivery and slaughtering services are displayed clearly.</p></div></div>
+                <div class="flow-step"><div class="step-number">5</div><div class="step-content"><h3>Group Information Entry</h3><p>Organizer inputs group name (optional), organizer full name, contact phone number (with automatic formatting help), and delivery location with address auto-complete/search integrated with Google Maps or similar.</p></div></div>
+                <div class="flow-step"><div class="step-number">6</div><div class="step-content"><h3>Group Open for Members to Join & Pay</h3><p>The group remains open for joining until the full livestock price is covered by members' payments. A progress bar shows total price coverage percentage and number of members joined and remaining slots.</p></div></div>
+            </div>
+        </div>
+
+        <div id="joining-group" class="tab-content">
+            <div class="user-flow">
+                <div class="flow-step"><div class="step-number">1</div><div class="step-content"><h3>Group Selection</h3><p>Members select the group they want to join from the organized groups list or via invitation link.</p></div></div>
+                <div class="flow-step"><div class="step-number">2</div><div class="step-content"><h3>Review Group Details</h3><p>Members see oxen/bull image, weight, breed, and total price; group type and member capacity with current number of members joined; slaughter date and time clearly displayed; slaughtering method chosen by organizer; and price per member and any additional fees.</p></div></div>
+                <div class="flow-step"><div class="step-number">3</div><div class="step-content"><h3>Enter Personal & Delivery Details</h3><p>Members enter full name (first and last), phone number (with formatting and validation), and delivery address/location with auto-completion and manual map pin if needed.</p></div></div>
+                <div class="flow-step"><div class="step-number">4</div><div class="step-content"><h3>Payment Process</h3><p>Members pay their share of the livestock price plus applicable service or delivery fees using mobile money (Mpesa, Airtel Money, etc.) or online card payment if available. Payments are securely processed.</p></div></div>
+                <div class="flow-step"><div class="step-number">5</div><div class="step-content"><h3>Post-Payment Confirmation</h3><p>Member can view updated payment and member count progress in the group, slaughter and delivery schedule reminders, and option to update delivery time preferences if company-managed slaughter is selected.</p></div></div>
+            </div>
+        </div>
+
+        <div id="company-groups" class="tab-content">
+            <div class="user-flow">
+                <div class="flow-step"><div class="step-number">1</div><div class="step-content"><h3>Browse Available Groups</h3><p>Users see up to 5 active company-managed Kircha groups with oxen/bull image, weight, and price; current members joined and available slots; slaughter date and time shown prominently; and price per share clearly displayed.</p></div></div>
+                <div class="flow-step"><div class="step-number">2</div><div class="step-content"><h3>Select and Review Group</h3><p>Users tap group to see full details as in creator groups.</p></div></div>
+                <div class="flow-step"><div class="step-number">3</div><div class="step-content"><h3>Enter Personal Information</h3><p>Required details: Full Name, Phone Number, and Delivery Address (autocomplete and map pin). The app validates data before moving forward.</p></div></div>
+                <div class="flow-step"><div class="step-number">4</div><div class="step-content"><h3>Payment & Confirmation</h3><p>Users pay their fair share of the livestock price. Delivery details and slaughtering managed by the company. Confirmation with receipts and group status updates provided.</p></div></div>
+            </div>
+        </div>
+    </section>
+    <div class="section-title" id="system-overview">
+        <h2>System Overview</h2>
+        <p>Frontend (PWA): Installable, offline-capable web app with service worker and manifest. Users create/join Kircha groups, browse livestock, and pay via mobile.
+Backend (Django): Handles user auth, group logic, database (PostgreSQL), and REST APIs. Manages real-time availability and payment tracking.
+Payments (Daraja API): STK Push sends M-Pesa prompt to user’s phone. Callbacks update payment status instantly.</p>
+        <img src="images/SAD.png" style="max-width:100%;height:auto;border-radius:8px;box-shadow:var(--shadow);">
+    </div>
+    <section id="erd" class="container">
+        <div class="section-title">
+            <h2>Database Schema</h2>
+            <p>Entity Relationship Diagram for the Meet For Meat application.</p>
+        </div>
+        <div class="erd-container">
+            <img src="images/ERD.png" alt="ERD" style="max-width:100%;height:auto;border-radius:8px;text-align: center; box-shadow:var(--shadow);">
+            <div style="margin-top:30px;">
+                <h3>Relationship Summary</h3>
+                <ul>
+                    <li><strong>Farmer (User) → Livestock:</strong> One-to-Many</li>
+                    <li><strong>Organizer (User) → KirchaGroup:</strong> One-to-Many</li>
+                    <li><strong>Livestock → KirchaGroup:</strong> One-to-One</li>
+                    <li><strong>KirchaGroup → GroupMember:</strong> One-to-Many</li>
+                    <li><strong>GroupMember → User:</strong> Many-to-One</li>
+                    <li><strong>GroupMember → Payment:</strong> One-to-Many</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section-title">
+            <h2>Folder Structure</h2>
+            <p>Backend and frontend project structure.</p>
+            <div class="folders">
+                <img src="images/backend.png" alt="Backend Structure">
+                <img src="images/frontend.png" alt="Frontend Structure">
+            </div>
+        </div>
+    </section>
+<section id="installation" class="container">
+    <div class="section-title">
+        <h2>Installation Guide</h2>
+        <p>Step-by-step setup for developers. All commands are run in a terminal.</p>
+    </div>
+
+    <div class="code-block-wrapper">
+        <button class="copy-btn" aria-label="Copy installation commands">
+            <i class="fas fa-copy"></i> Copy
+        </button>
+        <pre><code class="language-bash">1. Clone repository
+  git clone https://github.com/Tihitnaabraham/meet-for-meat.git
+  cd meet-for-meat
+
+2. Create virtual environment
+  python -m venv venv
+  source venv/bin/activate   # Windows: venv\Scripts\activate
+
+3. Install dependencies
+  pip install -r requirements.txt
+
+4. Apply migrations
+  python manage.py makemigrations
+  python manage.py migrate
+
+5. Create superuser
+  python manage.py createsuperuser
+
+6. Run server
+  python manage.py runserver</code></pre>
+    </div>
+
+    <div class="note">
+        <strong>Tip:</strong> Use <code>python -m pip install --upgrade pip</code> before step 3 if you encounter version conflicts.
+    </div>
+</section>
+
+<section id="configuration" class="container">
+    <div class="section-title">
+        <h2>Configuration Guide</h2>
+        <p>Environment variables and external services required for full functionality.</p>
+    </div>
+
+    <div class="cards config-cards">
+        <div class="card">
+            <div class="card-header"><h3>Database</h3></div>
+            <div class="card-body">
+                <p>PostgreSQL is recommended for production. For local development you may keep the default SQLite.</p>
+                <code>DATABASE_URL=postgres://user:pass@localhost:5432/meetformeat</code>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><h3>M-Pesa (Daraja)</h3></div>
+            <div class="card-body">
+                <p>Create a <code>.env</code> file in the project root and add:</p>
+                <pre><code>CONSUMER_KEY=your_consumer_key
+CONSUMER_SECRET=your_consumer_secret
+SHORTCODE=174379
+PASSKEY=your_passkey</code></pre>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-header"><h3>PWA Manifest</h3></div>
+            <div class="card-body">
+                <p>Edit <code>static/manifest.json</code> and replace <code>start_url</code> and <code>scope</code> with your production domain.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="note">
+        <strong>Important:</strong> Never commit <code>.env</code> to version control. Add it to <code>.gitignore</code>.
+    </div>
+</section>
+<section id="api" class="container">
+    <div class="section-title">
+        <h2>API Documentation</h2>
+        <p>RESTful endpoints exposed by Django REST Framework. All routes are prefixed with <code>/api/v1/</code>.</p>
+    </div>
+
+    <div class="table-container">
+        <table class="api-table">
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Endpoint</th>
+                    <th>Description</th>
+                    <th>Auth</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>GET</code></td>
+                    <td><code>/livestock/livestock/</code></td>
+                    <td>List verified oxen/bulls (filterable by weight, price)</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td><code>POST</code></td>
+                    <td><code>/kirchagroups/groups/create/</code></td>
+                    <td>Create a new Kircha group (organizer only)</td>
+                    <td>JWT</td>
+                </tr>
+                <tr>
+                    <td><code>POST</code></td>
+                    <td><code>/kirchagroups/groups/join/</code></td>
+                    <td>Join a group + initiate M-Pesa payment</td>
+                    <td>JWT</td>
+                </tr>
+                <tr>
+                    <td><code>POST</code></td>
+                    <td><code>/kirchagroups/groups/invite/</code></td>
+                    <td>Generate shareable invitation link</td>
+                    <td>JWT</td>
+                </tr>
+                <tr>
+                    <td><code>POST</code></td>
+                    <td><code>/mpesa/lipa-na-mpesa-online/</code></td>
+                    <td>Daraja webhook (payment callback)</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td><code>POST</code></td>
+                    <td><code>/users/register/</code></td>
+                    <td>User sign-up</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td><code>POST</code></td>
+                    <td><code>/users/login/</code></td>
+                    <td>Obtain JWT access/refresh tokens</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+   
+</section>
+
+<section id="glossary" class="container">
+    <div class="section-title">
+        <h2>Glossary</h2>
+        <p>Key terms used throughout the documentation.</p>
+    </div>
+
+    <dl class="glossary">
+        <dt>Kircha</dt>
+        <dd>Traditional Ethiopian communal meat-sharing practice where a group collectively buys, slaughters, and divides an animal.</dd>
+
+        <dt>STK Push</dt>
+        <dd>Daraja M-Pesa prompt that appears on a user’s phone to confirm a payment.</dd>
+
+        <dt>PWA</dt>
+        <dd>Progressive Web App – a web application that can be installed on a device, works offline, and feels like a native app.</dd>
+
+        <dt>Daraja</dt>
+        <dd>Safaricom’s official API suite for M-Pesa integrations (C2B, B2C, STK Push, etc.).</dd>
+
+        <dt>Half Kircha</dt>
+        <dd>Group size ≤ 20 members; each member receives half a share of the meat.</dd>
+
+        <dt>Full Kircha</dt>
+        <dd>Group size ≤ 10 members; each member receives a full share of the meat.</dd>
+
+        <dt>JWT</dt>
+        <dd>JSON Web Token – stateless authentication mechanism used for API access.</dd>
+    </dl>
+</section>
+<section id="backend" class="container">
+    <div class="section-title">
+        <h2>Backend</h2>
+        <p>Python/Django architecture.</p>
+    </div>
+    <div class="info-list">
+        <ul>
+            <li><strong>Language:</strong> Python 3.11+</li>
+            <li><strong>Framework:</strong> Django 5 + Django REST Framework</li>
+            <li><strong>Key Packages:</strong>
+                <code>django-daraja</code>, <code>djangorestframework-simplejwt</code>,
+                <code>celery</code>, <code>redis</code>
+            </li>
+            <li><strong>Async:</strong> Celery + Redis for M-Pesa callbacks & notifications</li>
+            <li><strong>Coding Standards:</strong> PEP 8, snake_case, Django app structure</li>
+        </ul>
+    </div>
+</section>
+<section id="hardware" class="container">
+    <div class="section-title">
+        <h2>Hardware & Accessibility</h2>
+        <p>Works on any device.</p>
+    </div>
+    <div class="info-list">
+        <ul>
+            <li>Any smartphone or feature phone with browser (Chrome, Safari, Firefox)</li>
+            <li>PWA: Installable via "Add to Home Screen"</li>
+            <li>Internet: Required only for payment & real-time sync</li>
+            <li>Language: English (RTL support planned)</li>
+        </ul>
+    </div>
+</section>
+
+<section id="testing" class="container">
+    <div class="section-title">
+        <h2>Testing</h2>
+        <p>Unit, integration, and end-to-end.</p>
+    </div>
+    <div class="info-list">
+        <div class="nested-list">
+            <strong>Key Tests:</strong>
+            <ul>
+                <li>Group creation with the needed time → blocked</li>
+                <li>STK Push → callback → payment status update</li>
+                <li>Offline join → sync on reconnect</li>
+                <li>Max members (10/20) enforced</li>
+            </ul>
+        </div>
+        <ul>
+            <li><strong>Tools:</strong> pytest, factory-boy, Django test client</li>
+        </ul>
+    </div>
+</section>
+    <section id="research" class="container">
+        <div class="section-title">
+            <h2>Research & Personas</h2>
+            <p>Insights from our research and the personas we've designed for.</p>
+        </div>
+        <div class="tabs">
+            <div class="tab active" data-tab="research-findings">Research Findings</div>
+            <div class="tab" data-tab="personas">Personas</div>
+        </div>
+        <div id="research-findings" class="tab-content active">
+            <h3>Key Findings</h3>
+            <ul>
+                <li><strong>Economic hardship</strong> from rising cattle prices impacts group affordability.</li>
+                <li><strong>Social fragmentation</strong> due to urbanization weakens trust and group formation.</li>
+                <li><strong>Youth disinterest</strong> in traditional, time-consuming Kircha processes.</li>
+                <li><strong>High cultural importance</strong> noted by elders for identity and food security.</li>
+                <li><strong>Need for transparency</strong> and reliable payment and livestock confirmation.</li>
+            </ul>
+            <h3 style="margin-top:30px;">Supporting Quotes</h3>
+            <blockquote style="font-style:italic;border-left:4px solid var(--accent-color);padding-left:20px;margin:20px 0;">
+                "Kircha meat is not just food, it is community and tradition."
+            </blockquote>
+            <blockquote style="font-style:italic;border-left:4px solid var(--accent-color);padding-left:20px;margin:20px 0;">
+                "The price of an ox is higher now, making it tough to gather enough funds."
+            </blockquote>
+            <blockquote style="font-style:italic;border-left:4px solid var(--accent-color);padding-left:20px;margin:20px 0;">
+                "I want to join a Kircha group but I don't know who to trust."
+            </blockquote>
+            <blockquote style="font-style:italic;border-left:4px solid var(--accent-color);padding-left:20px;margin:20px 0;">
+                "Young people see Kircha as old-fashioned and slow."
+            </blockquote>
+            <h3 style="margin-top:30px;">Opportunities / Recommendations</h3>
+            <ul>
+                <li>Develop a digital platform enabling transparent Kircha group formation, payment tracking, and livestock sourcing.</li>
+                <li>Incorporate real-time livestock availability updates and farmer verification.</li>
+                <li>Enable slaughter schedule setting with fasting alerts.</li>
+                <li>Support secure digital payments and delivery logistics.</li>
+                <li>Promote youth engagement through intuitive, culturally-sensitive user interfaces.</li>
+            </ul>
+        </div>
+        <div id="personas" class="tab-content">
+            <div class="persona-card">
+                <img src="images/mebrat.png" alt="Mebrat" class="persona-image">
+                <div class="persona-details">
+                    <h3 class="persona-name">Mebrat</h3>
+                    <p class="persona-role">Kircha Organizer</p>
+                    <p><strong>Age:</strong> 28</p>
+                    <p><strong>Location:</strong> Urban Ethiopia</p>
+                    <p><strong>Profile:</strong> Tech-savvy and culturally rooted, values transparency, fair payments, and efficient group coordination. Seeks flexible slaughter dates considering fasting. Concerned about recruiting members and ensuring livestock availability.</p>
+                </div>
+            </div>
+            <div class="persona-card">
+                <img src="images/getachew.png" alt="Getachew" class="persona-image">
+                <div class="persona-details">
+                    <h3 class="persona-name">Getachew</h3>
+                    <p class="persona-role">Kircha Member</p>
+                    <p><strong>Age:</strong> 35</p>
+                    <p><strong>Location:</strong> Urban Ethiopia</p>
+                    <p><strong>Profile:</strong> Urban professional who prefers joining existing Kircha groups with company-managed slaughter. Wants clear slaughter dates respecting fasting. Values convenience in payment and delivery.</p>
+                </div>
+            </div>
+            <div class="persona-card">
+                <img src="images/dawit.png" alt="Dawit" class="persona-image">
+                <div class="persona-details">
+                    <h3 class="persona-name">Dawit</h3>
+                    <p class="persona-role">Livestock Farmer</p>
+                    <p><strong>Age:</strong> 55</p>
+                    <p><strong>Location:</strong> Rural Ethiopia</p>
+                    <p><strong>Profile:</strong> Rural livestock supplier who wants verified payments before livestock delivery. Needs platform to update availability and reach Kircha groups. Values fair pricing and timely payment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+   <section id="team" class="container">
+    <div class="section-title">
+        <h2>Project Team</h2>
+        <p>Meet the software engineer behind Meet For Meat.</p>
+    </div>
+    <div class="photo">
+        <div class="tihitna-card">
+            <img src="images/titi.jpg" alt="Tihitna Yohannes">
+            <div class="card-header">
+                <h3>Tihitna Yohannes</h3>
+            </div>
+            <div class="card-body">
+                <p>Software Engineer</p>
+                <p>Leading the product development and research for Meet For Meat.</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#user-flows">User Flows</a></li>
+                        <li><a href="#erd">Database</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#research">Research</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="https://github.com/Tihitnaabraham"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/tihitna-abraham-96354a350/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Meet For Meat. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <div id="notification" class="notification">
+        <p>Thank you for exploring our documentation!</p>
+    </div>
+    <div id="screenshotModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <h2>App Screen</h2>
+            <div class="cards">
+                <div class="card"><img src="images/home.png" alt="Home Screen"><div class="card-headers"><h3>Welcome Screen</h3></div></div>
+                <div class="card"><img src="images/signin.png" alt="Signin"><div class="card-headers"><h3>Signin Screen</h3></div></div>
+                <div class="card"><img src="images/home-.png" alt="Home"><div class="card-headers"><h3>Home Screen</h3></div></div>
+                <div class="card"><img src="images/join.png" alt="Join"><div class="card-headers"><h3>Join to Group</h3></div></div>
+                <div class="card"><img src="images/pay.png" alt="Payment"><div class="card-headers"><h3>Payment Screen</h3></div></div>
+                <div class="card"><img src="images/buy.png" alt="Create Group"><div class="card-headers"><h3>Create Group</h3></div></div>
+                <div class="card"><img src="images/joinedgroups.png" alt="Status"><div class="card-headers"><h3>Status Track</h3></div></div>
+            </div>
+        </div>
+    </div>
+    <div id="imageModal" class="image-modal" style="display:none;">
+        <span class="close-popup">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
