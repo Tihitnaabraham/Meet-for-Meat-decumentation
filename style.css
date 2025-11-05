@@ -21,7 +21,6 @@ body {
     color: var(--text-color);
     background: #f8f9fa;
     font-size: 0.95rem; 
-    transform: scale(0.2);
 }
 
 .container {
